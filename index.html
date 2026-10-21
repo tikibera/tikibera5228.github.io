@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FreezeWorld</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eaf3f8;--surface:#ffffff;--text:#0f2433;--muted:#4d6678;--accent:#1a7fb5;--accent-text:#ffffff;--line:#c4d9e6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08151f;--surface:#0f2332;--text:#e6f3fb;--muted:#8fb0c4;--accent:#6cc8f2;--accent-text:#06202e;--line:#1e3a4e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08151f;--surface:#0f2332;--text:#e6f3fb;--muted:#8fb0c4;--accent:#6cc8f2;--accent-text:#06202e;--line:#1e3a4e;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6}
+main{max-width:720px;margin:0 auto;padding:12vh 24px 64px}
+h1{font-family:'Unbounded',system-ui,sans-serif;font-weight:800;font-size:clamp(1.5rem,7.6vw,4.2rem);line-height:1.05;white-space:nowrap;margin:0 0 20px;letter-spacing:-.02em;background:#08151f;padding:.35em .5em;border-radius:16px}
+h1 .w{color:#ffffff}
+h1 .y{color:#ff8a1f}
+.lead{font-size:1.2rem;color:var(--muted);margin:0 0 36px;max-width:34ch}
+.ip{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:14px 16px}
+.ip code{font-family:'Unbounded',system-ui,sans-serif;font-weight:600;font-size:clamp(1rem,4.5vw,1.4rem);flex:1;min-width:0;overflow-wrap:anywhere}
+button,.btn{font:inherit;font-weight:600;border:0;border-radius:10px;padding:10px 18px;background:var(--accent);color:var(--accent-text);cursor:pointer;text-decoration:none;display:inline-block}
+h2{font-family:'Unbounded',system-ui,sans-serif;font-size:1.1rem;margin:56px 0 16px}
+.links{display:grid;gap:10px}
+.links a{display:flex;justify-content:space-between;gap:12px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none;font-weight:600}
+.links a span{color:var(--muted);font-weight:400;overflow-wrap:anywhere;text-align:right}
+a:hover,button:hover{filter:brightness(1.08)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<main>
+<h1><span class="w">Freeze</span><span class="y">World</span></h1>
+<p class="lead">Лучший гриферский сервер. Заходи и играй!.</p>
+<div class="ip">
+<code id="ip">ghost.freezeworld.su</code>
+<button id="copy" type="button">Скопировать IP</button>
+</div>
+<h2>Присоединяйся</h2>
+<div class="links">
+<a href="https://discord.gg/eU8D8jxmGA" target="_blank" rel="noopener">Discord<span>Сообщество сервера</span></a>
+<a href="https://freezeworld.ru/" target="_blank" rel="noopener">Сайт<span>freezeworld.ru</span></a>
+</div>
+<h2>Контакты</h2>
+<div class="links">
+<a href="https://t.me/tikibera" target="_blank" rel="noopener">Telegram<span>@tikibera</span></a>
+<a href="https://www.youtube.com/tikibera5228" target="_blank" rel="noopener">YouTube<span>tikibera5228</span></a>
+</div>
+</main>
+<script>
+var b=document.getElementById('copy');
+b.addEventListener('click',function(){
+var t=document.getElementById('ip').textContent;
+try{navigator.clipboard.writeText(t).then(function(){b.textContent='Скопировано'},function(){b.textContent='Выделите IP вручную'})}
+catch(e){b.textContent='Выделите IP вручную'}
+setTimeout(function(){b.textContent='Скопировать IP'},2000);
+});
+</script>
+</body>
+</html>
